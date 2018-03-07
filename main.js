@@ -12,7 +12,7 @@ bestTeacher();
 // Function with one argument
 // NYCDA needs a simple welcome program for registered students.
 // Create a function called nycdaWelcome that will take in a student's name as a function argument and console log a string that looks like : "Welcome to NYCDA {Students Name}. Enjoy your stay"
-let nycdaWelcome = (name) => {
+let nycdaWelcome = name => {
   console.log(`Welcome to NYCDA, ${name}. Enjoy your stay.`);
 };
 
@@ -28,12 +28,12 @@ console.log(simpleCalc(5, 2));
 // Door 1 will give the user a brand new car
 // Door 2 will give the user a nycda t-shirt
 // Door 3 will turn into a blackhole and teleport you to antarctica
-let magicDoor = door => {
-  if (door == 1) {
+let magicDoor = doorNum => {
+  if (doorNum === 1) {
     console.log("You get a car!");
-  } else if (door == 2) {
+  } else if (doorNum === 2) {
     console.log("You get a t-shirt!");
-  } else if (door == 3) {
+  } else if (doorNum === 3) {
     console.log("You have entered a blackhole. You will be teleported to Antaractica.");
   } else {
     console.log("Sorry, you get nothing.");
@@ -50,12 +50,10 @@ magicDoor(4);
 let greaterOfThree = (integerOne, integerTwo, integerThree) => {
   if (integerOne > integerTwo && integerOne > integerThree) {
     return integerOne;
+  } else if (integerTwo > integerThree) {
+    return integerTwo;
   } else {
-    if (integerTwo > integerThree) {
-      return integerTwo;
-    } else {
-      return integerThree;
-    }
+    return integerThree;
   }
 };
 
@@ -74,7 +72,7 @@ console.log(lineThemUp(5,2,0));
 // Function that modifies input
 // Define a function called knighter that takes a name and returns it after being knighted.
 // ex : Knighter("Andy") returns "Royal Knight Sir Andy"
-let knighter = (name) => {
+let knighter = name => {
   return `Royal Knight Sir ${name}`;
 };
 
@@ -84,11 +82,7 @@ console.log(knighter("Andy"));
 // Define a function called royalizer that takes a gender and name as arguments, and returns a title based on the gender.
 // ex : royalizer("male", "David") returns "His Majesty David" , for female it would be "Her Majesty X".
 let royalizer = (gender, name) => {
-  if (gender = "female") {
-    return `Her Majesty ${name}`
-  } else {
-    return `His Majesty ${name}`
-  }
+  return gender == "female" ? `Her Majesty ${name}` : `His Majesty ${name}`;
 };
 
 console.log(royalizer("male", "David"));
