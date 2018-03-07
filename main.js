@@ -2,7 +2,8 @@
 
 
 // Function with no arguments
-// Declare a function called bestTeacher that takes no arguments and logs to the console "{Your Teacher} is the best teacher in the world" to the console. ;)
+// Declare a function called bestTeacher that takes no arguments and logs to the
+// console "{Your Teacher} is the best teacher in the world" to the console. ;)
 let bestTeacher = () => {
   console.log("David is the best teacher in the world.")
 };
@@ -11,7 +12,9 @@ bestTeacher();
 
 // Function with one argument
 // NYCDA needs a simple welcome program for registered students.
-// Create a function called nycdaWelcome that will take in a student's name as a function argument and console log a string that looks like : "Welcome to NYCDA {Students Name}. Enjoy your stay"
+// Create a function called nycdaWelcome that will take in a student's name as a
+// function argument and console log a string that looks like : "Welcome to NYCDA
+// {Students Name}. Enjoy your stay"
 let nycdaWelcome = name => {
   console.log(`Welcome to NYCDA, ${name}. Enjoy your stay.`);
 };
@@ -19,12 +22,15 @@ let nycdaWelcome = name => {
 nycdaWelcome("Kay");
 
 // Function with multiple arguments
-// Create a simple calculator function called simpleCalc that given two arguments will perform addition and return the result.
+// Create a simple calculator function called simpleCalc that given two arguments
+// will perform addition and return the result.
 let simpleCalc = (a, b) => a + b;
 console.log(simpleCalc(5, 2));
 
 // Function with arguments and logic
-// Declare a function called magicDoor that receives an input of 1, 2 or 3. Depending upon which virtual "door" was entered create logic that will tell user they've received a different "prize" in an alert based on their selection
+// Declare a function called magicDoor that receives an input of 1, 2 or 3.
+// Depending upon which virtual "door" was entered create logic that will tell
+// user they've received a different "prize" in an alert based on their selection
 // Door 1 will give the user a brand new car
 // Door 2 will give the user a nycda t-shirt
 // Door 3 will turn into a blackhole and teleport you to antarctica
@@ -46,7 +52,8 @@ magicDoor(3);
 magicDoor(4);
 
 // Function that modifies input
-// Define a function greaterOfThree that takes three integers and returns the larger of the three.
+// Define a function greaterOfThree that takes three integers and returns the larger
+// of the three.
 let greaterOfThree = (integerOne, integerTwo, integerThree) => {
   if (integerOne > integerTwo && integerOne > integerThree) {
     return integerOne;
@@ -60,7 +67,8 @@ let greaterOfThree = (integerOne, integerTwo, integerThree) => {
 console.log(greaterOfThree(5,2,0));
 
 // Function that modifies input
-// Define a function lineThemUp that takes three integers as arguments and returns the integers as an array.
+// Define a function lineThemUp that takes three integers as arguments and returns
+// the integers as an array.
 let lineThemUp = (integerOne, integerTwo, integerThree) => {
   let integers = [];
   integers.push(integerOne, integerTwo, integerThree);
@@ -70,7 +78,8 @@ let lineThemUp = (integerOne, integerTwo, integerThree) => {
 console.log(lineThemUp(5,2,0));
 
 // Function that modifies input
-// Define a function called knighter that takes a name and returns it after being knighted.
+// Define a function called knighter that takes a name and returns it after being
+// knighted.
 // ex : Knighter("Andy") returns "Royal Knight Sir Andy"
 let knighter = name => {
   return `Royal Knight Sir ${name}`;
@@ -79,11 +88,76 @@ let knighter = name => {
 console.log(knighter("Andy"));
 
 // Function with Logic
-// Define a function called royalizer that takes a gender and name as arguments, and returns a title based on the gender.
-// ex : royalizer("male", "David") returns "His Majesty David" , for female it would be "Her Majesty X".
+// Define a function called royalizer that takes a gender and name as arguments,
+// and returns a title based on the gender.
+// ex : royalizer("male", "David") returns "His Majesty David" , for female it
+// would be "Her Majesty X".
 let royalizer = (gender, name) => {
   return gender == "female" ? `Her Majesty ${name}` : `His Majesty ${name}`;
 };
 
 console.log(royalizer("male", "David"));
 console.log(royalizer("female", "Elizabeth"));
+
+// JavaScript Workshop
+
+// 1 - Calculator Function
+// Make a function that takes in a word, and two numbers. The supported words
+// would be “add”, “subtract”, “multiply” & “divide”. This function should perform
+// the appropriate calculator action on the numbers and return the answer. Your
+// calculator function should work for all of the following examples.
+
+var answer = calculator("add", 4, 2)
+// console.log(answer) // 6
+answer = calculator("subtract", 4, 2)
+// console.log(answer) // 2
+answer = calculator("divide", 4, 2)
+// console.log(answer) // 2
+answer = calculator("multiply", 4, 2)
+// console.log(answer) // 8
+
+// 2 - Kardashian Quiz
+// Let’s build a simple quiz program, this is the perfect use of a function to
+// take care of the repetitive task of reading from a collection of questions.
+// First off you should build a function that takes in a question and an answer
+// then returns 1 or 0 depending on if the person got it right.
+// You can make use of the prompt  function in JavaScript to get user input.
+// Here’s some starter code:
+//
+
+function ask(question, answer){
+  //your code here
+
+
+}
+
+var point = ask("Is Kim the best?", "true")
+
+console.log(point)
+
+
+var questions = [
+  "Was Kim born in 1985?",
+  "Will Rob get out of jail?",
+  "Does North seem happy?",
+  "Kanye released 'Heartless' in 2008?"
+  ]
+
+var answers = [
+  "yes",
+  "no",
+  "no",
+  "yes"
+  ]
+
+//you code here
+
+// After making your function:
+// - create an array of questions, and an array of answers
+// - use a loop and those arrays to ask the user questions.
+// - keep a running total of the user’s score.
+// - console.log the user’s score after the loop.
+//
+// Bonus:
+// If you got through The Kardashian quiz with your sanity, try to make your quiz
+// more complex. Maybe make a version that tells you which Kardashian you are.
