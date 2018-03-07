@@ -108,7 +108,7 @@ console.log(royalizer("female", "Elizabeth"));
 // calculator function should work for all of the following examples.
 
 let calculator = (operation, a, b) => {
-  switch(operation) {
+  switch (operation) {
     case "add"      : return a + b;
     case "subtract" : return a - b;
     case "divide"   : return a / b;
@@ -130,43 +130,55 @@ console.log(answer) // 8
 // take care of the repetitive task of reading from a collection of questions.
 // First off you should build a function that takes in a question and an answer
 // then returns 1 or 0 depending on if the person got it right.
-// You can make use of the prompt  function in JavaScript to get user input.
+// You can make use of the prompt function in JavaScript to get user input.
 // Here’s some starter code:
-//
 
-function ask(question, answer){
-  //your code here
-
-
-}
-
-var point = ask("Is Kim the best?", "true")
-
-console.log(point)
+alert("Welcome to the Kardashian Quiz to find out which Kardashian you are! Answer yes or no for the following questions.");
 
 
 var questions = [
   "Was Kim born in 1985?",
   "Will Rob get out of jail?",
   "Does North seem happy?",
-  "Kanye released 'Heartless' in 2008?"
-  ]
+  "Did Kanye release 'Heartless' in 2008?"
+];
 
 var answers = [
   "yes",
   "no",
   "no",
   "yes"
-  ]
+];
 
-//you code here
+var point = 0;
+
+let ask = (question, answer) => {
+  for (let i = 0; i < questions.length; i++) {
+    question = questions[i];
+    answer = prompt(question);
+    if (answer === answers[i]) {
+      point++;
+    }
+  }
+
+  switch (point) {
+    case 0 : return `You scored ${point} points!\nYou are Rob!`;
+    case 1 : return `You scored ${point} point!\nYou are Kylie!`;
+    case 2 : return `You scored ${point} points!\nYou are Kim!`;
+    case 3 : return `You scored ${point} points!\nYou are Kanye!`;
+    default: return `You scored ${point} points!\nYou are Kendall!`;
+  }
+};
+
+console.log(ask());
+
 
 // After making your function:
 // - create an array of questions, and an array of answers
 // - use a loop and those arrays to ask the user questions.
 // - keep a running total of the user’s score.
 // - console.log the user’s score after the loop.
-//
+
 // Bonus:
 // If you got through The Kardashian quiz with your sanity, try to make your quiz
 // more complex. Maybe make a version that tells you which Kardashian you are.
