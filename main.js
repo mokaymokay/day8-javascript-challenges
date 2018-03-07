@@ -48,17 +48,15 @@ magicDoor(4);
 // Function that modifies input
 // Define a function greaterOfThree that takes three integers and returns the larger of the three.
 let greaterOfThree = (integerOne, integerTwo, integerThree) => {
-  let biggest = integerOne;
   if (integerOne > integerTwo && integerOne > integerThree) {
-    biggest = biggest;
+    return integerOne;
   } else {
     if (integerTwo > integerThree) {
-      biggest = integerTwo;
+      return integerTwo;
     } else {
-      biggest = integerThree;
+      return integerThree;
     }
   }
-  return biggest;
 };
 
 console.log(greaterOfThree(5,2,0));
