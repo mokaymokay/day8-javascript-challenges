@@ -107,14 +107,23 @@ console.log(royalizer("female", "Elizabeth"));
 // the appropriate calculator action on the numbers and return the answer. Your
 // calculator function should work for all of the following examples.
 
-var answer = calculator("add", 4, 2)
-// console.log(answer) // 6
-answer = calculator("subtract", 4, 2)
-// console.log(answer) // 2
-answer = calculator("divide", 4, 2)
-// console.log(answer) // 2
-answer = calculator("multiply", 4, 2)
-// console.log(answer) // 8
+let calculator = (operation, a, b) => {
+  switch(operation) {
+    case "add"      : return a + b;
+    case "subtract" : return a - b;
+    case "divide"   : return a / b;
+    case "multiply" : return a * b;
+  };
+};
+
+var answer = calculator("add", 4, 2);
+console.log(answer) // 6
+answer = calculator("subtract", 4, 2);
+console.log(answer) // 2
+answer = calculator("divide", 4, 2);
+console.log(answer) // 2
+answer = calculator("multiply", 4, 2);
+console.log(answer) // 8
 
 // 2 - Kardashian Quiz
 // Let’s build a simple quiz program, this is the perfect use of a function to
