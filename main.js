@@ -108,12 +108,17 @@ console.log(royalizer("female", "Elizabeth"));
 // calculator function should work for all of the following examples.
 
 let calculator = (operation, a, b) => {
-  switch (operation) {
-    case "add"      : return a + b;
-    case "subtract" : return a - b;
-    case "divide"   : return a / b;
-    case "multiply" : return a * b;
-  };
+  if (typeof a === "number" && typeof b === "number") {
+    switch (operation) {
+      case "add"      : return a + b;
+      case "subtract" : return a - b;
+      case "divide"   : return a / b;
+      case "multiply" : return a * b;
+      default         : return "please enter a valid operation: add, subtract, multiply, or divide."
+    }
+  } else {
+    return "please make sure your numbers are valid."
+  }
 };
 
 var answer = calculator("add", 4, 2);
@@ -133,8 +138,7 @@ console.log(answer) // 8
 // You can make use of the prompt function in JavaScript to get user input.
 // Here’s some starter code:
 
-alert("Welcome to the Kardashian Quiz to find out which Kardashian you are! Answer yes or no for the following questions.");
-
+alert("Welcome to the Kardashian Quiz to find out which Kardashian you are!");
 
 var questions = [
   "Was Kim born in 1985?",
@@ -155,7 +159,7 @@ var point = 0;
 let ask = (question, answer) => {
   for (let i = 0; i < questions.length; i++) {
     question = questions[i];
-    answer = prompt(question);
+    answer = prompt(question, "type 'yes' or 'no'");
     if (answer === answers[i]) {
       point++;
     }
