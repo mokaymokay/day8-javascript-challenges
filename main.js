@@ -140,29 +140,19 @@ console.log(answer) // 8
 
 alert("Welcome to the Kardashian Quiz to find out which Kardashian you are!");
 
-var questions = [
-  "Was Kim born in 1985?",
-  "Will Rob get out of jail?",
-  "Does North seem happy?",
-  "Did Kanye release 'Heartless' in 2008?"
-];
-
-var answers = [
-  "yes",
-  "no",
-  "no",
-  "yes"
-];
+const quiz = {
+  "Was Kim born in 1985?" : "yes",
+  "Will Rob get out of jail?" : "no",
+  "Does North seem happy?" : "no",
+  "Did Kanye release 'Heartless' in 2008?" : "yes"
+};
 
 var point = 0;
 
 let ask = (question, answer) => {
-  for (let i = 0; i < questions.length; i++) {
-    question = questions[i];
-    answer = prompt(question, "type 'yes' or 'no'");
-    if (answer === answers[i]) {
-      point++;
-    }
+  for (let question in quiz) {
+    let answer = prompt(question, "type 'yes' or 'no'");
+    if (answer === quiz[question]) point++;
   }
 
   switch (point) {
@@ -174,7 +164,7 @@ let ask = (question, answer) => {
   }
 };
 
-console.log(ask());
+ask();
 
 
 // After making your function:
